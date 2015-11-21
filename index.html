@@ -1,37 +1,62 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
   <head>
-    <meta charset="UTF-8">
-    <title>Mini Air Hockey by esneyder12345</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Mini Air Hockey</h1>
-      <h2 class="project-tagline">proyecto de sistemas digitales &quot;mini air hockey&quot;</h2>
-      <a href="https://github.com/esneyder12345/proyecto-final" class="btn">View on GitHub</a>
-      <a href="https://github.com/esneyder12345/proyecto-final/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/esneyder12345/proyecto-final/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640">
 
-    <section class="main-content">
-      <h3>
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>Mini Air Hockey by esneyder12345</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/esneyder12345/proyecto-final">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>Mini Air Hockey</h1>
+            <h2>proyecto de sistemas digitales &quot;mini air hockey&quot;</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/esneyder12345/proyecto-final/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/esneyder12345/proyecto-final/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h3>
 <a id="mini-air-hockey" class="anchor" href="#mini-air-hockey" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mini Air Hockey.</h3>
 
 <p>El proyecto se hizo siguiendo los parámetros establecidos por el profesor, y para el montaje utilizamos lo siguiente: como tablero usamos 2 matrices Led conectadas en cascada es decir la salida de datos de la primera es la entrada de la segunda, estas matrices tienen un controlador propio de ellas que reduce en gran medida los pines a utilizar y además aumenta su funcionalidad mucho más allá de lo común, el controlador es un Max7219 y solo utiliza como entrada 3 pines que son DIN, CS, CLK. Para manipular correctamente este controlador y la matriz utilizamos una librería llamada LedControl.h, la cual fue descargada del mismo programa de arduino.
 <img src="http://www.electroschematics.com/wp-content/uploads/2014/07/MAX7219-led-matrix.jpg" alt="ejemplo ilustrativo de una matriz de led con su controlador"></p>
 
 <p>Para controlar el plato vamos a utilizar 12 sensores infrarrojo (6 en cada lado) a una distancia especifica que nos permita hacer funcionar el juego sin errores y más cómodamente, estos sensores vienen de a par (emisor y receptor), nuestra idea es usar esta ventaja de la línea visual de los sensores, para que así cuando haya una perturbación en el medio de ellos se detecte y envié un uno al arduino y a su vez este a la matriz para controlar el plato.
-<img src="http://www.smartblog.es/wp-content/uploads/2011/09/Captura-de-pantalla-2011-09-29-a-las-12.18.161-619x392.png" alt="sensores infrarojo"></p>
-
-<h3>
-<a id="diseño-del-juego" class="anchor" href="#dise%C3%B1o-del-juego" aria-hidden="true"><span class="octicon octicon-link"></span></a>Diseño del Juego</h3>
-
-<p><img alt="display de 7 segmentos"></p>
+<img src="http://www.smartblog.es/wp-content/uploads/2011/09/Captura-de-pantalla-2011-09-29-a-las-12.18.161-619x392.png" alt="sensores infrarojo">
+para leer los goles anotados usamos un display 7 segmentos de ánodo común conectado a un controlador ls7447 al cual se le envia un valor binario y este lo muestra en el display con un valor decimal.
+<img alt="display de 7 segmentos">
+para el funcionamiento a través del micro controlador avr usamos el arduino mega2560 el cual nos permitió conectar todos los pines gracias a sus alto numero de entradas.<img alt=""></p>
 
 <h3>
 <a id="creating-pages-manually" class="anchor" href="#creating-pages-manually" aria-hidden="true"><span class="octicon octicon-link"></span></a>Creating pages manually</h3>
@@ -47,15 +72,22 @@
 <a id="support-or-contact" class="anchor" href="#support-or-contact" aria-hidden="true"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
 
 <p>Having trouble with Pages? Check out our <a href="https://help.github.com/pages">documentation</a> or <a href="https://github.com/contact">contact support</a> and we’ll help you sort it out.</p>
+      </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/esneyder12345/proyecto-final">Mini Air Hockey</a> is maintained by <a href="https://github.com/esneyder12345">esneyder12345</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/esneyder12345">esneyder12345</a> can be found on <a href="https://github.com/esneyder12345/proyecto-final">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="https://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
       </footer>
 
-    </section>
+    </div>
 
-  
+    
   </body>
 </html>
